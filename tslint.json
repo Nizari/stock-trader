@@ -1,0 +1,59 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "variable-name": {
+      "options": [
+        "allow-snake-case"
+      ]
+    },
+    "comma-dangle": [
+      "warning",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+    "interface-name": false,
+    "no-empty": [
+      true,
+      "allow-empty-functions"
+    ],
+    "member-ordering": [
+      false
+    ],
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "disable-next-line:member-ordering": true,
+    "max-line-length": [
+      true,
+      {
+        "limit": 160,
+        "ignore-pattern": "^import |^export {(.*?)}",
+        "check-regex": true
+      }
+    ]
+  }
+}
