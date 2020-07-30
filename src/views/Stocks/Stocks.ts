@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator';
-import StockCard from '@/components/StockCard.vue';
+import StockCard from '@/components/StockCard/StockCard.vue';
 import StockRecord from '@/models/StockRecord';
 
 @Component<Stocks>({

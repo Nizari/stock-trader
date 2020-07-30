@@ -23,7 +23,7 @@
   </v-col>
 </template>
 
-<script lang="ts" src="@/components/StockCard.ts"></script>
+<script lang="ts" src="@/components/StockCard/StockCard.ts"></script>
 
 <style lang="scss" scoped>
 .stock__bought {
