@@ -31,7 +31,7 @@
         </v-list>
       </v-menu>
 
-      <v-toolbar-title>Funds: $8.126</v-toolbar-title>
+      <v-toolbar-title class="title-1 font-weight-black ml-3">Funds: $8.126</v-toolbar-title>
     </v-app-bar>
   </div>
 </template>

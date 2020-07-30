@@ -11,8 +11,10 @@
 </template>
 
 <script lang="ts">
+// @BRYSE @STEFANO DIT IS GRUWELIJK!
+import 'reflect-metadata'
 import Vue from 'vue';
-import appNavigation from '@/components/Navigation/Navigation.vue';
+import appNavigation from '@/components/Navigation.vue';
 export default Vue.extend({
   name: 'App',
   components: {
