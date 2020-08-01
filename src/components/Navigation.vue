@@ -47,9 +47,10 @@ import { Getter, Action } from 'vuex-class';
 })
 export default class Navigation extends Vue {
   @Getter private totalFundsLabel!: number;
-  @Action private saveData: any;
-  @Action private loadData: any;
-  @Action('updateStockPrice') private endDay: any;
+  // @see https://github.com/ktsn/vuex-class/issues/18
+  @Action private saveData!: () => void;
+  @Action private loadData!: () => void;
+  @Action('updateStockPrice') private endDay!: () => void;
 
   protected items = [
     { title: 'Save Data', icon: 'mdi-zip-disk', handler: 'saveData' },
