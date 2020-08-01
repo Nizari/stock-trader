@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
        <app-stock-card
-        v-for="card in cards"
+        v-for="card in allStocks"
         :key="card.title"
         :card=card
         :boughtStock=true></app-stock-card>

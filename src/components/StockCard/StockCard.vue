@@ -2,7 +2,9 @@
   <v-col :key="card.title">
     <v-card>
       <v-card-title :class="boughtStock ? 'stock__bought' : 'stock__forsale'">{{ card.title }}</v-card-title>
-      <v-card-subtitle :class="boughtStock ? 'stock__bought' : 'stock__forsale'">Price: {{ card.price | currency('EUR') }}</v-card-subtitle>
+      <v-card-subtitle
+        :class="boughtStock ? 'stock__bought' : 'stock__forsale'"
+      >Price: {{ card.price | currency('EUR') }}</v-card-subtitle>
 
       <v-card-actions>
         <v-text-field
@@ -16,8 +18,8 @@
 
         <v-spacer></v-spacer>
 
-        <v-btn color="error" v-if="boughtStock">Sell</v-btn>
-        <v-btn color="primary" v-else>Buy </v-btn>
+        <v-btn v-if="boughtStock" color="error" @click="sellStock(card)">Sell</v-btn>
+        <v-btn v-else color="primary" @click="buyStock(card)">Buy</v-btn>
       </v-card-actions>
     </v-card>
   </v-col>

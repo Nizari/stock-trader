@@ -31,34 +31,30 @@
         </v-list>
       </v-menu>
 
-      <v-toolbar-title class="title-1 font-weight-black ml-3">Funds: $8.126</v-toolbar-title>
+      <v-toolbar-title
+        class="title-1 font-weight-black ml-3"
+      >Funds: {{ totalFundsLabel | currency('EUR') }}</v-toolbar-title>
     </v-app-bar>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter, Action } from 'vuex-class';
 
 @Component<Navigation>({
   components: {},
 })
 export default class Navigation extends Vue {
+  @Getter private totalFundsLabel!: number;
+  @Action private saveData: any;
+  @Action private loadData: any;
+  @Action('updateStockPrice') private endDay: any;
+
   protected items = [
     { title: 'Save Data', icon: 'mdi-zip-disk', handler: 'saveData' },
     { title: 'Load Data', icon: 'mdi-download-circle-outline', handler: 'loadData' },
   ];
-
-  private endDay() {
-    console.log('End of day!');
-  }
-
-  private saveData() {
-    console.log('Save data!');
-  }
-
-  private loadData() {
-    console.log('Load Data!');
-  }
 
   private funcionCall(name: string) {
     switch (name) {
