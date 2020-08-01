@@ -1,4 +1,4 @@
-import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators';
+import { Module, VuexModule } from 'vuex-module-decorators';
 
 @Module
 export default class Funds extends VuexModule {
@@ -6,17 +6,5 @@ export default class Funds extends VuexModule {
 
   get totalFundsLabel() {
     return this.totalFunds;
-  }
-
-  @Mutation
-  public decrementFundsMutation(value: number) {
-    console.log('MUTATION decrement', this.totalFunds, value);
-    this.totalFunds -= value;
-  }
-
-  @Action({ commit: 'decrementFundsMutation' })
-  public decrementFunds(value: number) {
-    console.log('decrementFunds action', value);
-    return value;
   }
 }

@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import fundsModule from './modules/funds';
-import stocksModule from './modules/stocks';
-import dataModule from './modules/data';
+import funds from './modules/funds';
+import stocks from './modules/stocks';
 
 Vue.use(Vuex);
 
@@ -13,8 +12,7 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
-    fundsModule,
-    stocksModule,
-    dataModule,
+    funds,
+    stocks,
   },
 });

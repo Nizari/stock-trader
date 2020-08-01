@@ -1,7 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import StockCard from '@/components/StockCard/StockCard.vue';
+import { State } from 'vuex-class';
 import StockRecord from '@/models/StockRecord';
-import { Getter } from 'vuex-class';
 
 @Component<Stocks>({
   components: {
@@ -9,5 +9,6 @@ import { Getter } from 'vuex-class';
   },
 })
 export default class Stocks extends Vue {
-  @Getter private allStocks!: StockRecord[];
+  @State(state => state.stocks.availableStocks)
+  private allStocks!: StockRecord[];
 }

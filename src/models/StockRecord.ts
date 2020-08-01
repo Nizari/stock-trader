@@ -1,3 +1,9 @@
 export default class StockRecord {
-  constructor(private title: string, private price: number) {}
+  public quantity?: number;
+
+  constructor(public title: string, quantity?: number) {
+    if (quantity) {
+      this.quantity = quantity;
+    }
+  }
 }
