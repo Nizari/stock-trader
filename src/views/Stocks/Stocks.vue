@@ -2,10 +2,10 @@
   <v-container fluid>
     <v-row>
        <app-stock-card
-        v-for="card in allStocks"
-        :key="card.title"
-        :card=card
-        :boughtStock=true></app-stock-card>
+        v-for="stockRecord in allStocks"
+        :key="stockRecord.title"
+        :stockRecord=stockRecord
+        :boughtStock=false></app-stock-card>
     </v-row>
   </v-container>
 </template>

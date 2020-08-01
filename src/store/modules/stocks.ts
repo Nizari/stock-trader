@@ -1,6 +1,10 @@
 import { Module, VuexModule, Mutation, Action} from 'vuex-module-decorators';
 import StockRecord from '@/models/StockRecord';
 
+interface BuyStockPayload {
+  stockRecord: StockRecord;
+  quantity: number;
+}
 
 @Module
 export default class Stocks extends VuexModule {
@@ -22,12 +26,12 @@ export default class Stocks extends VuexModule {
 
   @Mutation
   public buyStockMutation() {
-    console.log('buyStockMutation', this.availableStocks);
+    console.log('buyStockMutation');
   }
 
   @Action({ commit: 'buyStockMutation' })
-  public buyStock() {
-    console.log('buyStock action');
+  public buyStock(payload: BuyStockPayload) {
+    console.log('buyStockAction', payload);
   }
 
   @Mutation
@@ -36,7 +40,7 @@ export default class Stocks extends VuexModule {
   }
 
   @Action({ commit: 'sellStockMutation' })
-  public sellStock() {
+  public sellStock(payload: BuyStockPayload) {
     console.log('sellStock action');
   }
 }

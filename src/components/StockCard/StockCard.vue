@@ -1,13 +1,16 @@
 <template>
-  <v-col :key="card.title">
+  <v-col :key="stockRecord.title">
     <v-card>
-      <v-card-title :class="boughtStock ? 'stock__bought' : 'stock__forsale'">{{ card.title }}</v-card-title>
+      <v-card-title
+        :class="boughtStock ? 'stock__bought' : 'stock__forsale'"
+      >{{ stockRecord.title }}</v-card-title>
       <v-card-subtitle
         :class="boughtStock ? 'stock__bought' : 'stock__forsale'"
-      >Price: {{ card.price | currency('EUR') }}</v-card-subtitle>
+      >Price: {{ stockRecord.price | currency('EUR') }}</v-card-subtitle>
 
       <v-card-actions>
         <v-text-field
+          v-model="quantity"
           :rules="[rules.leastOne]"
           type="number"
           label="Quantity"
@@ -18,8 +21,23 @@
 
         <v-spacer></v-spacer>
 
-        <v-btn v-if="boughtStock" color="error" @click="sellStock(card)">Sell</v-btn>
-        <v-btn v-else color="primary" @click="buyStock(card)">Buy</v-btn>
+        <v-btn
+          v-if="boughtStock"
+          color="error"
+          @click="sellStock({
+          stockRecord: stockRecord,
+          quantity: quantity
+          })"
+        >Sell</v-btn>
+
+        <v-btn
+          v-else
+          color="primary"
+          @click="buyStock({
+          stockRecord: stockRecord,
+          quantity: quantity
+          })"
+        >Buy</v-btn>
       </v-card-actions>
     </v-card>
   </v-col>
